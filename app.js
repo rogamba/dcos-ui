@@ -14,7 +14,7 @@ app.controller("dcos", function($scope,$interval,$q,$http) {
         console.log($scope.user + $scope.text);
         $http({
             method : 'POST',
-            url :  'http://dcos-api/save',
+            url :  'http://dcosagentkgwaodciyfoem.eastus.cloudapp.azure.com/api/save',
             data : data
         }).then(function(result){
             $scope.user = "";
@@ -34,7 +34,7 @@ app.controller("dcos", function($scope,$interval,$q,$http) {
             last_date = $scope.items[0].date
         }
         var qry = "?q="+last_date
-        $http.get('http://dcos-api/fetch' + qry )
+        $http.get('http://dcosagentkgwaodciyfoem.eastus.cloudapp.azure.com/api/fetch' + qry )
         .success(function(result){
             if(result.items.length > 0)
                 result.items.reverse()
